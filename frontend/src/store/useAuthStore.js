@@ -79,7 +79,10 @@ export const useAuthStore = create((set,get) => ({
     const socket = io(BASE_URL, {
       query : {
         userId : authUser._id
-      }
+      },
+        transports: ["websocket"], 
+       secure: true,
+  withCredentials: true,
     })
     socket.connect()
     set({socket : socket})
