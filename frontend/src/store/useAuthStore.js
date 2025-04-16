@@ -84,7 +84,6 @@ export const useAuthStore = create((set,get) => ({
        secure: true,
   withCredentials: true,
     })
-    socket.connect()
     set({socket : socket})
     socket.on("getOnlineUsers", (userIds)=>{
           set({onlineUsers : userIds})
